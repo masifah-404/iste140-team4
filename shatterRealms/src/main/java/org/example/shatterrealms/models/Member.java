@@ -9,20 +9,12 @@ public class Member {
     private String memberEmail;
     private String memberPassword;
 
-    public String getMemberPassword() {
-        return memberPassword;
+    public Long getMemberId() {
+        return memberId;
     }
 
-    public void setMemberPassword(String memberPassword) {
-        this.memberPassword = memberPassword;
-    }
-
-    public String getMemberEmail() {
-        return memberEmail;
-    }
-
-    public void setMemberEmail(String memberEmail) {
-        this.memberEmail = memberEmail;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 
     public String getMemberName() {
@@ -33,11 +25,19 @@ public class Member {
         this.memberName = memberName;
     }
 
-    public Long getMemberId() {
-        return memberId;
+    public String getMemberEmail() {
+        return memberEmail;
     }
 
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
+    public void setMemberEmail(String memberEmail) {
+        this.memberEmail = memberEmail;
+    }
+
+    public String getMemberPassword() {
+        return memberPassword;
+    }
+
+    public void setMemberPassword(String memberPassword) {
+        this.memberPassword = memberPassword;
     }
 }
