@@ -1,6 +1,8 @@
 package org.example.shatterrealms.services;
 
-import org.example.shatterrealms.models.*;
+import org.example.shatterrealms.models.CartItem;
+import org.example.shatterrealms.models.Member;
+import org.example.shatterrealms.models.MerchProduct;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,26 +21,25 @@ public class ShatterRealmsService {
         seedCartItems();
     }
 
-    // ── Seed data ──────────────────────────────────────────────────────────────
-
+    // Load sample data so the app has something to show right away
     private void seedMembers() {
         Member m1 = new Member();
         m1.setMemberId(1L);
-        m1.setMemberName("Thorin Stonehelm");
-        m1.setMemberEmail("thorin@shatterrealms.com");
-        m1.setMemberPassword("dwarven123");
+        m1.setMemberName("Masifah");
+        m1.setMemberEmail("masifahm@shatterrealms.com");
+        m1.setMemberPassword("m@sif@h");
 
         Member m2 = new Member();
         m2.setMemberId(2L);
-        m2.setMemberName("Lyria Moonwhisper");
-        m2.setMemberEmail("lyria@shatterrealms.com");
-        m2.setMemberPassword("elven456");
+        m2.setMemberName("Safia");
+        m2.setMemberEmail("safias@shatterrealms.com");
+        m2.setMemberPassword("s@fi@");
 
         Member m3 = new Member();
         m3.setMemberId(3L);
-        m3.setMemberName("Garrus the Bold");
-        m3.setMemberEmail("garrus@shatterrealms.com");
-        m3.setMemberPassword("fighter789");
+        m3.setMemberName("Arina");
+        m3.setMemberEmail("arinab@shatterrealms.com");
+        m3.setMemberPassword("@rin@");
 
         members.add(m1);
         members.add(m2);
@@ -62,7 +63,7 @@ public class ShatterRealmsService {
 
         MerchProduct p3 = new MerchProduct();
         p3.setProductId(3L);
-        p3.setProductName("Dice Set – Gold & Maroon");
+        p3.setProductName("Dice Set - Gold & Maroon");
         p3.setProductDescription("7-piece polyhedral dice set in campaign colours.");
         p3.setProductPrice(14.99);
         p3.setStock(100);
@@ -83,7 +84,7 @@ public class ShatterRealmsService {
     private void seedCartItems() {
         CartItem ci1 = new CartItem();
         ci1.setProductId(1L);
-        ci1.setProduct(products.get(0));
+        ci1.setProduct(products.getFirst());
         ci1.setQuantity(2);
 
         CartItem ci2 = new CartItem();
@@ -95,9 +96,10 @@ public class ShatterRealmsService {
         cartItems.add(ci2);
     }
 
-    // ── Members ────────────────────────────────────────────────────────────────
-
-    public List<Member> getMembers() { return members; }
+    // Member-related methods
+    public List<Member> getMembers() {
+        return members;
+    }
 
     public Member findMemberById(Long id) {
         return members.stream()
@@ -113,15 +115,24 @@ public class ShatterRealmsService {
 
     public void updateMember(Long memberId, String name, String email, String password) {
         Member member = findMemberById(memberId);
-        if (member == null) return;
-        if (name != null && !name.isBlank())         member.setMemberName(name);
-        if (email != null && !email.isBlank())       member.setMemberEmail(email);
-        if (password != null && !password.isBlank()) member.setMemberPassword(password);
+        if (member == null) {
+            return;
+        }
+        if (name != null && !name.isBlank()) {
+            member.setMemberName(name);
+        }
+        if (email != null && !email.isBlank()) {
+            member.setMemberEmail(email);
+        }
+        if (password != null && !password.isBlank()) {
+            member.setMemberPassword(password);
+        }
     }
 
-    // ── Products (read-only catalogue) ────────────────────────────────────────
-
-    public List<MerchProduct> getProducts() { return products; }
+    // Product catalogue methods - these only read from the seeded list
+    public List<MerchProduct> getProducts() {
+        return products;
+    }
 
     public MerchProduct findProductById(Long id) {
         return products.stream()
@@ -130,14 +141,17 @@ public class ShatterRealmsService {
                 .orElse(null);
     }
 
-    // ── Cart CRUD ──────────────────────────────────────────────────────────────
+    // Shopping cart methods.
+    public List<CartItem> getCartItems() {
+        return cartItems;
+    }
 
-    public List<CartItem> getCartItems() { return cartItems; }
-
-    // CREATE – add a new item, or increase quantity if already present
+    // Add a product to the cart, or bump the quantity if it's already there
     public void addCartItem(Long productId, int quantity) {
         MerchProduct product = findProductById(productId);
-        if (product == null) return;
+        if (product == null) {
+            return;
+        }
 
         for (CartItem item : cartItems) {
             if (item.getProductId().equals(productId)) {
@@ -153,7 +167,7 @@ public class ShatterRealmsService {
         cartItems.add(newItem);
     }
 
-    // UPDATE – change the quantity of an existing cart item
+    // Update the quantity for a product that is already in the cart
     public void updateCartItem(Long productId, int newQuantity) {
         for (CartItem item : cartItems) {
             if (item.getProductId().equals(productId)) {
@@ -163,7 +177,7 @@ public class ShatterRealmsService {
         }
     }
 
-    // DELETE – remove an item from the cart entirely
+    // Remove a product from the cart completely
     public void removeCartItem(Long productId) {
         cartItems.removeIf(item -> item.getProductId().equals(productId));
     }
