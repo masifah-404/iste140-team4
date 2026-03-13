@@ -1,20 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Shatter Realms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Join The Shattered Realms - An immersive Dungeons & Dragons campaign welcoming players of all experience levels.">
+    <meta name="keywords"
+          content="dungeons and dragons, DND, campaign, tabletop RPG, roleplaying game, fantasy, adventure">
+    <meta name="author" content="The Shattered Realms Campaign Team">
+    <title>The Shattered Realms - DND Campaign</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
+
 <body>
-<h1>
-    Welcome to the Shatter Realms
-</h1>
-<h3>
-    About us
-</h3>
-<p>
-    We are building a community of Dungeons and Dragons enthusiasts, scheduling weekly game events and even sponsoring a D&D merch store for the fans.
-    Rest assured, contributions made by buying merch will help in fundraising for (insert charity organisation).
-    Come join us and we shall travel this journey together
-</p>
+<nav>
+    <div class="nav-container">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <div class="nav-top">
+            <div class="nav-header">
+                <div class="logo">
+                    <img src="assets/media/LOGO.jpeg" alt="Campaign Logo">
+                </div>
+            </div>
+            <div class="logo-center">
+                <img src="assets/media/NAME.png" alt="The Shattered Realms" class="center-logo">
+            </div>
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </label>
+        </div>
+        <div class="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="/index.html" class="nav-link active">Home</a></li>
+                <li><a href="/character-guide.html" class="nav-link">Character Guide</a></li>
+                <li><a href="/lore-and-world.html" class="nav-link">Lore &amp; World</a></li>
+                <li><a href="/members/add" class="nav-link">Sign Up</a></li>
+                <li><a href="/merch" class="nav-link">Merch Shop</a></li>
+                <li><a href="/cart" class="nav-link">&#x1F6D2; Cart</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main id="top">
+    <section id="home" class="page active">
+        <div class="container">
+            <header class="hero">
+                <div class="hero-content">
+                    <h1>The Shattered Realms</h1>
+                    <p class="tagline">A Dungeons &amp; Dragons Campaign</p>
+                    <p class="subtitle">Where legends are born and destinies collide</p>
+                    <a href="/members/add" class="cta-button">Join the Adventure</a>
+                </div>
+            </header>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>&#x1F3B2; Campaign Style</h3>
+                    <p>A balanced mix of roleplay, combat, and exploration. Perfect for both new and experienced players!</p>
+                </article>
+                <article class="info-card">
+                    <h3>&#x1F4C5; Schedule</h3>
+                    <p>Weekly sessions every Saturday evening, 6-9 PM. Sessions typically run 3-4 hours with breaks.</p>
+                </article>
+                <article class="info-card">
+                    <h3>&#x1F5FA;&#xFE0F; Setting</h3>
+                    <p>The war-torn continent of Eldoria, where ancient magic and political intrigue shape the fate of nations.</p>
+                </article>
+                <article class="info-card">
+                    <h3>&#x2694;&#xFE0F; Level Range</h3>
+                    <p>Starting at Level 3, with potential to reach Level 15-20. Characters with established backstories welcomed!</p>
+                </article>
+            </div>
+
+            <article class="about-campaign">
+                <h2>About the Campaign</h2>
+                <div class="campaign-image">
+                    <img src="assets/media/D&D.JPG" alt="Fantasy dragon landscape">
+                </div>
+                <div class="campaign-content">
+                    <p>Welcome, brave adventurer! The Shattered Realms campaign takes place in a world recovering
+                        from the Cataclysm - a magical disaster that tore the continent of Eldoria into fragments.
+                        Ancient kingdoms have fallen, new powers have risen, and the very fabric of reality remains
+                        unstable.</p>
+                    <p>This campaign welcomes players of all experience levels. New to D&amp;D? We'll teach you
+                        everything you need to know. Veteran player? Bring your creativity and let's tell an epic
+                        story together!</p>
+                    <p>Learn more about <a href="/character-guide.html" class="internal-link">character creation</a>
+                        or explore our <a href="/lore-and-world.html" class="internal-link">world lore</a>.</p>
+                </div>
+            </article>
+
+            <!-- Entity navigation links required by Assignment 2 -->
+            <section style="margin: 2rem 0;">
+                <h2>Community &amp; Shop</h2>
+                <div class="info-grid">
+                    <article class="info-card">
+                        <h3>&#x1F465; Members</h3>
+                        <p>View all registered adventurers or create your own account to join the community.</p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+                            <a href="/members" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">View Members</a>
+                            <a href="/members/add" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">Sign Up</a>
+                        </div>
+                    </article>
+                    <article class="info-card">
+                        <h3>&#x1F6CD;&#xFE0F; Merch Shop</h3>
+                        <p>Browse campaign merchandise. Proceeds go to charity - support the Realms in style!</p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+                            <a href="/merch" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">Browse Shop</a>
+                            <a href="/cart" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">&#x1F6D2; Cart</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="hexagon-container">
+                <div class="hexagon">
+                    <div class="hexagon-content"><h3>EPIC</h3><p>Adventures</p></div>
+                </div>
+                <div class="hexagon">
+                    <div class="hexagon-content"><h3>RICH</h3><p>Storytelling</p></div>
+                </div>
+                <div class="hexagon">
+                    <div class="hexagon-content"><h3>IMMERSIVE</h3><p>World</p></div>
+                </div>
+            </div>
+
+            <section class="media-section">
+                <h2>D&amp;D Beginner's Guide</h2>
+                <div class="video-container">
+                    <video controls poster="assets/media/video-poster.jpg">
+                        <source src="assets/media/DNDTutorial.mp4" type="video/mp4">
+                        <source src="assets/media/DNDTutorial.webm" type="video/webm">
+                        Your browser does not support the video tag. Please upgrade to a modern browser.
+                    </video>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>Dungeons &amp; Dragons is a trademark of Wizards of the Coast LLC.</p>
+        <p>&copy; 2025 The Shattered Realms Campaign. All rights reserved.</p>
+    </div>
+</footer>
 </body>
+
 </html>
