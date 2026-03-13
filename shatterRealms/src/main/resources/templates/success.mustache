@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmation page - The Shattered Realms.">
+    <title>Success - The Shattered Realms</title>
+    <link rel="stylesheet" href="/assets/CSS/style.css">
+    <style>
+        .success-box {
+            background: var(--card-bg);
+            border: 2px solid var(--primary-gold);
+            border-radius: var(--border-radius-lg);
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .success-box h2 {
+            border: none;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <div class="nav-top">
+                <div class="nav-header">
+                    <div class="logo">
+                        <img src="/assets/media/LOGO.jpeg" alt="Campaign Logo">
+                    </div>
+                </div>
+                <div class="logo-center">
+                    <img src="/assets/media/NAME.png" alt="The Shattered Realms" class="center-logo">
+                </div>
+                <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/character-guide.html" class="nav-link">Character Guide</a></li>
+                    <li><a href="/lore-and-world.html" class="nav-link">Lore &amp; World</a></li>
+                    <li><a href="/members/add" class="nav-link">Sign Up</a></li>
+                    <li><a href="/merch" class="nav-link">Merch Shop</a></li>
+                    <li><a href="/cart" class="nav-link">🛒 Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page active">
+            <div class="container">
+                <div class="success-box">
+                    <div class="success-icon">⚔️</div>
+                    <h2>Success!</h2>
+                    <p style="font-size:1.2rem; color:var(--accent-gold); margin-bottom:1rem;">
+                        Thank you. <strong>{{name}}</strong> was added successfully!
+                    </p>
+                    <p>Your record has been saved to the Shattered Realms data store.</p>
+
+                    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem;">
+                        <a href="/" class="cta-button">🏠 Back to Home</a>
+                        <a href="/members" class="cta-button">View Members</a>
+                        <a href="/merch" class="cta-button">View Merch</a>
+                        <a href="/cart" class="cta-button">View Cart</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Dungeons &amp; Dragons is a trademark of Wizards of the Coast LLC.</p>
+            <p>&copy; 2025 The Shattered Realms Campaign. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
