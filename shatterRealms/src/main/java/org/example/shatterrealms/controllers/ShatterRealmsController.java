@@ -21,6 +21,73 @@ public class ShatterRealmsController {
         return "forward:/index.html";
     }
 
+    // Get request for viewing all members
+    @GetMapping("/members")
+    public String viewMembers(Model model) {
+        model.addAttribute("members", service.getMembers());
+        return "members";
+    }
+
+    // Get request for the signup form
+    @GetMapping("/members/add")
+    public String addMemberForm() {
+        return "member-add";
+    }
+
+    // Post request for adding a new member
+    @PostMapping("/members/add")
+    public String addMember(@RequestParam String memberName,
+                            @RequestParam String memberEmail,
+                            @RequestParam String memberPassword) {
+        Member member = new Member();
+        member.setMemberName(memberName);
+        member.setMemberEmail(memberEmail);
+        member.setMemberPassword(memberPassword);
+        service.addMember(member);
+
+        String name;
+        try {
+            name = java.net.URLEncoder.encode(memberName, "UTF-8");
+        } catch (Exception e) {
+            name = "member";
+        }
+        return "redirect:/add/success/member?name=" + name;
+    }
+
+    // Get request for editing an existing member
+    @GetMapping("/members/edit/{memberId}")
+    public String editMemberForm(@PathVariable Long memberId, Model model) {
+        Member member = service.findMemberById(memberId);
+        if (member != null) {
+            model.addAttribute("editMember", member);
+        }
+        return "member-edit";
+    }
+
+    // Post request for updating member information
+    @PostMapping("/members/edit/{memberId}")
+    public String editMember(@PathVariable Long memberId,
+                             @RequestParam String memberName,
+                             @RequestParam String memberEmail,
+                             @RequestParam(required = false) String memberPassword) {
+        service.updateMember(memberId, memberName, memberEmail, memberPassword);
+
+        String name;
+        try {
+            name = java.net.URLEncoder.encode(memberName, "UTF-8");
+        } catch (Exception e) {
+            name = "member";
+        }
+        return "redirect:/add/success/member-update?name=" + name;
+    }
+
+    // Get request for viewing the merch catalogue
+    @GetMapping("/merch")
+    public String viewMerch(Model model) {
+        model.addAttribute("products", service.getProducts());
+        return "merch";
+    }
+
     // Get requests for viewing cart
     @GetMapping("/cart")
     public String viewCart(Model model) {

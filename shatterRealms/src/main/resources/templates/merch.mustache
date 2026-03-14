@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official merchandise for The Shattered Realms campaign.">
+    <title>Merch Shop - The Shattered Realms</title>
+    <link rel="stylesheet" href="/assets/CSS/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <div class="nav-top">
+                <div class="nav-header">
+                    <div class="logo">
+                        <img src="/assets/media/LOGO.jpeg" alt="Campaign Logo">
+                    </div>
+                </div>
+                <div class="logo-center">
+                    <img src="/assets/media/NAME.png" alt="The Shattered Realms" class="center-logo">
+                </div>
+                <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/character-guide.html" class="nav-link">Character Guide</a></li>
+                    <li><a href="/lore-and-world.html" class="nav-link">Lore &amp; World</a></li>
+                    <li><a href="/members/add" class="nav-link">Sign Up</a></li>
+                    <li><a href="/merch" class="nav-link active">Merch Shop</a></li>
+                    <li><a href="/cart" class="nav-link">Cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page active">
+            <div class="container">
+                <section class="page-title">
+                    <h1>Merch Shop</h1>
+                </section>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+                    <p style="margin:0;">Support the campaign. Proceeds go to charity.</p>
+                    <a href="/cart/add" class="cta-button">Add to Cart</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>In Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#products}}
+                            <tr>
+                                <td>{{productId}}</td>
+                                <td><strong>{{productName}}</strong></td>
+                                <td>{{productDescription}}</td>
+                                <td style="color:var(--accent-gold); font-weight:bold;">${{productPrice}}</td>
+                                <td>{{stock}}</td>
+                            </tr>
+                            {{/products}}
+                            {{^products}}
+                            <tr>
+                                <td colspan="5" style="text-align:center; color:var(--primary-gold);">
+                                    No products available yet.
+                                </td>
+                            </tr>
+                            {{/products}}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="text-align:center; margin-top:2rem;">
+                    <a href="/" class="cta-button">&larr; Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Dungeons &amp; Dragons is a trademark of Wizards of the Coast LLC.</p>
+            <p>&copy; 2025 The Shattered Realms Campaign. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
