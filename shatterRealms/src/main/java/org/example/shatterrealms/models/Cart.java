@@ -2,7 +2,7 @@ package org.example.shatterrealms.models;
 
 import java.util.List;
 
-public class Cart {
+public class art {
     private Long cartId;
     private Member member;
     private List<CartItem> items;
