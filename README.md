@@ -1,7 +1,7 @@
 # Shattered Realms — D&D Community Platform
 
 **Team Members:**
-- Safia Siddique — 761008460
+- Safia Siddique (Merge Manager) — 761008460
 - Masifah Mazhar — 418003492
 - Arina Baiazitova — 761008753
 
