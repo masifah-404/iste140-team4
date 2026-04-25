@@ -19,4 +19,4 @@ public class ShatterRealmsController {
     @GetMapping("/cart")
     public String cart() { return "redirect:/cart.html"; }
 }
-}
+
