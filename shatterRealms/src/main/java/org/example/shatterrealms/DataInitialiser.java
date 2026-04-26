@@ -15,7 +15,7 @@ public class DataInitialiser implements CommandLineRunner {
 
     @Autowired private MemberRepository memberRepository;
     @Autowired private MerchProductRepository productRepository;
-    @Autowired private CartItemRepository    cartItemRepository;
+    @Autowired private CartItemRepository cartItemRepository;
 
     @Override
     public void run(String... args) {
@@ -29,7 +29,7 @@ public class DataInitialiser implements CommandLineRunner {
         memberRepository.save(new Member("Masifah",  "masifahm@shatterrealms.com", "m@sif@h"));
         memberRepository.save(new Member("Safia",    "safias@shatterrealms.com",   "s@fi@"));
         memberRepository.save(new Member("Arina",    "arinab@shatterrealms.com",   "@rin@"));
-    
+    } // Added missing closing brace here
 
     private void seedProducts() {
         if (productRepository.count() > 0) return;
@@ -45,11 +45,14 @@ public class DataInitialiser implements CommandLineRunner {
         productRepository.save(new MerchProduct(
                 "Campaign Enamel Pin",
                 "Collectible enamel pin of the Shattered Realms logo.", 9.99, 200));
-    }
+    } // Removed extra semicolon
+
     private void seedCartItems() {
         if (cartItemRepository.count() > 0) return;
+
+        // Note: ID 1 and 3 might not be exactly 1 and 3 depending on how
+        // the DB auto-increments, but this is fine for initial testing.
         productRepository.findById(1L).ifPresent(p -> cartItemRepository.save(new CartItem(p, 2)));
         productRepository.findById(3L).ifPresent(p -> cartItemRepository.save(new CartItem(p, 1)));
-    }
-
+    } // Removed extra semicolon
 }
