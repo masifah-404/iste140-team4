@@ -1,5 +1,7 @@
 package org.example.shatterrealms;
 
+import org.example.shatterrealms.models.Member;
+import org.example.shatterrealms.repositories.MemberRepository;
 import org.example.shatterrealms.models.CartItem;
 import org.example.shatterrealms.models.MerchProduct;
 import org.example.shatterrealms.repositories.MerchProductRepository;
@@ -11,14 +13,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataInitialiser implements CommandLineRunner {
 
+    @Autowired private MemberRepository memberRepository;
     @Autowired private MerchProductRepository productRepository;
     @Autowired private CartItemRepository    cartItemRepository;
 
     @Override
     public void run(String... args) {
+        seedMembers();
         seedProducts();
         seedCartItems();
     }
+
+    private void seedMembers() {
+        if (memberRepository.count() > 0) return;
+        memberRepository.save(new Member("Masifah",  "masifahm@shatterrealms.com", "m@sif@h"));
+        memberRepository.save(new Member("Safia",    "safias@shatterrealms.com",   "s@fi@"));
+        memberRepository.save(new Member("Arina",    "arinab@shatterrealms.com",   "@rin@"));
+    
 
     private void seedProducts() {
         if (productRepository.count() > 0) return;
