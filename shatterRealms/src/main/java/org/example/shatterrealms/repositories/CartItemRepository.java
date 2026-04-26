@@ -1,6 +1,6 @@
 package org.example.shatterrealms.repositories;
 
-import org.example.shatteredrealms.models.CartItem;
+import org.example.shatterrealms.models.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
