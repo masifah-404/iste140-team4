@@ -33,4 +33,7 @@ public interface MerchProductRepository extends JpaRepository<MerchProduct, Long
 
     // Find method for finding products and sorting them in descending order of price
     List<MerchProduct> findAllByOrderByProductPriceDesc();
+
+    @Query("SELECT p FROM MerchProduct p WHERE p.productPrice <= :maxPrice")
+    List<MerchProduct> findByMaxPrice(@Param("maxPrice") Double maxPrice);
 }

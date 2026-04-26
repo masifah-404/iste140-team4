@@ -66,7 +66,7 @@ public class MerchProductService {
 
     public boolean deleteProduct(Long id) {
         if (productRepository.existsById(id)) {
-            List<org.example.shatteredrealms.models.CartItem> itemsInCart =
+            List<org.example.shatterrealms.models.CartItem> itemsInCart =
                     cartItemRepository.findByProduct_ProductId(id);
 
             cartItemRepository.deleteAll(itemsInCart);
