@@ -1,31 +1,29 @@
 package org.example.shatterrealms.models;
 
+import jakarta.persistence.*;
+
+//Arina Baiazitova 761008753
+@Entity
+@Table(name = "cart_items")
 public class CartItem {
-    private Long productId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id", nullable = false)
     private MerchProduct product;
+
+    @Column(nullable = false)
     private int quantity;
 
-    public Long getProductId() {
-        return productId;
-    }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+    public CartItem() {}
 
-    public MerchProduct getProduct() {
-        return product;
-    }
-
-    public void setProduct(MerchProduct product) {
-        this.product = product;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
+    public CartItem(MerchProduct product, int quantity) {
+        this.product  = product;
         this.quantity = quantity;
     }
 
@@ -35,4 +33,13 @@ public class CartItem {
         }
         return 0.0;
     }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public MerchProduct getProduct() { return product; }
+    public void setProduct(MerchProduct product) { this.product = product; }
+
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 }
