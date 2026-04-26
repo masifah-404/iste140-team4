@@ -10,7 +10,7 @@
           content="dungeons and dragons, DND, campaign, tabletop RPG, roleplaying game, fantasy, adventure">
     <meta name="author" content="The Shattered Realms Campaign Team">
     <title>The Shattered Realms - DND Campaign</title>
-    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="/assets/CSS/style.css?v=4">
 </head>
 
 <body>
@@ -32,12 +32,12 @@
         </div>
         <div class="nav-menu-container">
             <ul class="nav-menu">
-                <li><a href="/index.html" class="nav-link active">Home</a></li>
-                <li><a href="/character-guide.html" class="nav-link">Character Guide</a></li>
-                <li><a href="/lore-and-world.html" class="nav-link">Lore &amp; World</a></li>
-                <li><a href="/members/add" class="nav-link">Sign Up</a></li>
-                <li><a href="/merch" class="nav-link">Merch Shop</a></li>
-                <li><a href="/cart" class="nav-link">&#x1F6D2; Cart</a></li>
+                <li><a href="/index.html"           class="nav-link active">Home</a></li>
+                <li><a href="/character-guide.html"  class="nav-link">Character Guide</a></li>
+                <li><a href="/lore-and-world.html"   class="nav-link">Lore &amp; World</a></li>
+                <li><a href="/members.html"          class="nav-link">Members</a></li>
+                <li><a href="/merch.html"            class="nav-link">Merch Shop</a></li>
+                <li><a href="/cart.html"             class="nav-link">&#x1F6D2; Cart</a></li>
             </ul>
         </div>
     </div>
@@ -46,15 +46,18 @@
 <main id="top">
     <section id="home" class="page active">
         <div class="container">
+
+            <!-- Hero -->
             <header class="hero">
                 <div class="hero-content">
                     <h1>The Shattered Realms</h1>
                     <p class="tagline">A Dungeons &amp; Dragons Campaign</p>
                     <p class="subtitle">Where legends are born and destinies collide</p>
-                    <a href="/members/add" class="cta-button">Join the Adventure</a>
+                    <a href="/members.html" class="cta-button">Join the Adventure</a>
                 </div>
             </header>
 
+            <!-- Campaign info cards -->
             <div class="info-grid">
                 <article class="info-card">
                     <h3>&#x1F3B2; Campaign Style</h3>
@@ -62,7 +65,7 @@
                 </article>
                 <article class="info-card">
                     <h3>&#x1F4C5; Schedule</h3>
-                    <p>Weekly sessions every Saturday evening, 6-9 PM. Sessions typically run 3-4 hours with breaks.</p>
+                    <p>Weekly sessions every Saturday evening, 6–9 PM. Sessions typically run 3–4 hours with breaks.</p>
                 </article>
                 <article class="info-card">
                     <h3>&#x1F5FA;&#xFE0F; Setting</h3>
@@ -70,10 +73,11 @@
                 </article>
                 <article class="info-card">
                     <h3>&#x2694;&#xFE0F; Level Range</h3>
-                    <p>Starting at Level 3, with potential to reach Level 15-20. Characters with established backstories welcomed!</p>
+                    <p>Starting at Level 3, with potential to reach Level 15–20. Characters with established backstories welcomed!</p>
                 </article>
             </div>
 
+            <!-- About -->
             <article class="about-campaign">
                 <h2>About the Campaign</h2>
                 <div class="campaign-image">
@@ -81,7 +85,7 @@
                 </div>
                 <div class="campaign-content">
                     <p>Welcome, brave adventurer! The Shattered Realms campaign takes place in a world recovering
-                        from the Cataclysm - a magical disaster that tore the continent of Eldoria into fragments.
+                        from the Cataclysm — a magical disaster that tore the continent of Eldoria into fragments.
                         Ancient kingdoms have fallen, new powers have risen, and the very fabric of reality remains
                         unstable.</p>
                     <p>This campaign welcomes players of all experience levels. New to D&amp;D? We'll teach you
@@ -92,28 +96,58 @@
                 </div>
             </article>
 
-            <!-- Entity navigation links required by Assignment 2 -->
-            <section style="margin: 2rem 0;">
-                <h2>Community &amp; Shop</h2>
+            <!-- ════════ Entity Navigation Cards (Assignment 3) ════════ -->
+            <section style="margin: 2.5rem 0;">
+                <h2 style="text-align:center; margin-bottom:1.5rem;">Community &amp; Shop</h2>
                 <div class="info-grid">
+
+                    <!-- Members card -->
                     <article class="info-card">
                         <h3>&#x1F465; Members</h3>
-                        <p>View all registered adventurers or create your own account to join the community.</p>
-                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
-                            <a href="/members" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">View Members</a>
-                            <a href="/members/add" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">Sign Up</a>
+                        <p>View all registered adventurers, search the registry, or sign up to join the campaign community.</p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:auto; padding-top:1rem;">
+                            <a href="/members.html" class="cta-button" style="font-size:.85rem; padding:.5rem 1rem;">
+                                View Members
+                            </a>
                         </div>
                     </article>
+
+                    <!-- Merch card -->
                     <article class="info-card">
                         <h3>&#x1F6CD;&#xFE0F; Merch Shop</h3>
-                        <p>Browse campaign merchandise. Proceeds go to charity - support the Realms in style!</p>
-                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
-                            <a href="/merch" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">Browse Shop</a>
-                            <a href="/cart" class="cta-button" style="font-size:0.85rem; padding:0.5rem 1rem;">&#x1F6D2; Cart</a>
+                        <p>Browse official campaign merchandise — T-shirts, dice sets, map posters and more. Proceeds support the Realms!</p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:auto; padding-top:1rem;">
+                            <a href="/merch.html" class="cta-button" style="font-size:.85rem; padding:.5rem 1rem;">
+                                Browse Shop
+                            </a>
                         </div>
                     </article>
+
+                    <!-- Cart card -->
+                    <article class="info-card">
+                        <h3>&#x1F6D2; Shopping Cart</h3>
+                        <p>Review your selected items, update quantities, or remove products before completing your order.</p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:auto; padding-top:1rem;">
+                            <a href="/cart.html" class="cta-button" style="font-size:.85rem; padding:.5rem 1rem;">
+                                View Cart
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Character guide card -->
+                    <article class="info-card">
+                        <h3>&#x1F4DC; Character Guide</h3>
+                        <p>New to the campaign? Read the character creation guide and explore recommended concepts for new players.</p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:auto; padding-top:1rem;">
+                            <a href="/character-guide.html" class="cta-button" style="font-size:.85rem; padding:.5rem 1rem;">
+                                Read Guide
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </section>
+            <!-- ════════════════════════════════════════════════════════ -->
 
             <div class="hexagon-container">
                 <div class="hexagon">
@@ -131,12 +165,13 @@
                 <h2>D&amp;D Beginner's Guide</h2>
                 <div class="video-container">
                     <video controls poster="assets/media/video-poster.jpg">
-                        <source src="assets/media/DNDTutorial.mp4" type="video/mp4">
+                        <source src="assets/media/DNDTutorial.mp4"  type="video/mp4">
                         <source src="assets/media/DNDTutorial.webm" type="video/webm">
                         Your browser does not support the video tag. Please upgrade to a modern browser.
                     </video>
                 </div>
             </section>
+
         </div>
     </section>
 </main>
@@ -148,5 +183,4 @@
     </div>
 </footer>
 </body>
-
 </html>
