@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class DataInitialiser implements CommandLineRunner {
 
     @Autowired private MerchProductRepository productRepository;
-    Autowired private CartItemRepository    cartItemRepository;
+    @Autowired private CartItemRepository    cartItemRepository;
 
     @Override
     public void run(String... args) {
