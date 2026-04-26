@@ -1,9 +1,9 @@
 package org.example.shatterrealms.services;
 
-import org.example.shatteredrealms.models.CartItem;
-import org.example.shatteredrealms.models.MerchProduct;
-import org.example.shatteredrealms.repositories.CartItemRepository;
-import org.example.shatteredrealms.repositories.MerchProductRepository;
+import org.example.shatterrealms.models.CartItem;
+import org.example.shatterrealms.models.MerchProduct;
+import org.example.shatterrealms.repositories.CartItemRepository;
+import org.example.shatterrealms.repositories.MerchProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
