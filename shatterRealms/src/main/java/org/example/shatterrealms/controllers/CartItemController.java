@@ -1,7 +1,7 @@
 package org.example.shatterrealms.controllers;
 
-import org.example.shatteredrealms.models.CartItem;
-import org.example.shatteredrealms.services.CartItemService;
+import org.example.shatterrealms.models.CartItem;
+import org.example.shatterrealms.services.CartItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
